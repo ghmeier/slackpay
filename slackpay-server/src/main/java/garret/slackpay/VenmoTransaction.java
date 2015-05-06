@@ -24,7 +24,7 @@ public class VenmoTransaction {
 	}
 	
 	public String getLink(){
-		return "<https://venmo.com/?txn"+this.txn+"&"+
+		return "<https://venmo.com/?txn="+this.txn+"&"+
 				"recipients="+this.recipient+"&"+
 				"amount="+this.amount+"&"+
 				"note="+this.note+"&"+
