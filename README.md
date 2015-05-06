@@ -26,4 +26,8 @@ slack_tokens:
 
 ####Add a slash command
 Now add a slash command with slack's integration like so:
-![Pictures are easier here](https://raw.github.com/ghmeier/slackpay/master/slackpay.png)
+![Pictures are easier here](https://raw.githubusercontent.com/ghmeier/slackpay/master/slackpay.png)
+
+Push the server to your favorite hosting service (I like heroku) and run it.
+
+###I'm running a version and can add your team to it, as well, just ask :)
