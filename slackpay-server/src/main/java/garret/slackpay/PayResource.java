@@ -38,7 +38,12 @@ public class PayResource {
 			return "No username present. Try /slackpay @<username> $<X.XX> <note>";
 		}
 		
-		String recip = SlackItem.getSlackEmail(username,client,conf.getSlackToken(info.getTeam_domain()));
+		String token = conf.getSlackToken(info.getTeam_domain());
+		if (token == null){
+			return "No token for "+info.getTeam_domain();
+		}
+		
+		String recip = SlackItem.getSlackEmail(username,client,token);
 		if (recip == null){
 			return "Incorrect Username. Try /slackpay @<username> $<X.XX> <note>";
 		}
