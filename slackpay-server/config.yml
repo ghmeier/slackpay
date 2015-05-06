@@ -1,6 +1,7 @@
 applicationName: slackpay
 slack_token: 
   gifasent: xoxp-2801095921-2806004971-4743837401-be17e8
+  hackISU: xoxp-4466182863-4466182883-4761588460-ebe711
 server:
   type: simple
   applicationContextPath: /
