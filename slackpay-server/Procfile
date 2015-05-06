@@ -1,1 +1,1 @@
-web    java $JAVA_OPTS -Ddw.server.connector.port=$PORT -jar target/slackpay-0.0.1.jar server src/main/java/garret/slackpay/resources/config.yml
+web    java $JAVA_OPTS -Ddw.server.connector.port=$PORT -jar target/slackpay-0.0.1.jar server config.yml

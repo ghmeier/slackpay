@@ -1,4 +1,4 @@
-applicationName: opossum
+applicationName: slackpay
 server:
   type: simple
   applicationContextPath: /

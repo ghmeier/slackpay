@@ -15,7 +15,8 @@ public class PayResource {
 	@GET
 	public SlackpayResponse getPay(@QueryParam("to") String to, @QueryParam("from") String from, @QueryParam("amt") String amt){
 		
-		return new SlackpayResponse();
+		return new SlackpayResponse(to + " "+ from + " " + amt);
+		
 	}
 
 }
