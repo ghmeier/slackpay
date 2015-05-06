@@ -35,8 +35,8 @@ public class SlackpayConfiguration extends Configuration {
 	  }
 	  
 	  @JsonProperty("slack_token")
-	  public void setSlackToken(String team,String token){
-		  slack_token.put(team, token);
+	  public void setSlackToken(Map<String,String> tokens){
+		  slack_token = tokens;
 	  }
 	  
 	  public String getApplicationName() {
