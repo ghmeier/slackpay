@@ -11,13 +11,28 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 @Path("pay")
-@Produces(MediaType.APPLICATION_JSON)
+@Produces(MediaType.TEXT_PLAIN)
 public class PayResource {
 	
 	@GET
-	public SlackInfo getPay(@BeanParam SlackInfo info){
-
-		return info;
+	public String getPay(@BeanParam SlackInfo info){
+		String text = info.getText();
+		
+		String[] tokens = text.split(" ");
+		
+		if (tokens.length < 2){
+			return "Invalid";
+		}
+		
+		String recip = tokens[0];
+		double amt = Double.parseDouble(tokens[1].replaceAll("$", ""));
+		String note = "";
+		if (tokens.length >= 3){
+			note = tokens[2];
+		}
+		
+		VenmoTransaction txn = VenmoTransaction.getPayTransaction(amt, recip, note);
+		return txn.getLink();
 		
 	}
 
