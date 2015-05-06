@@ -14,6 +14,9 @@ public class SlackpayConfiguration extends Configuration {
 	  @NotEmpty
 	  private String applicationName = "slackpay";
 	  
+	  @NotEmpty
+	  private String slack_token;
+	  
 	  @Valid
 	  @NotNull
 	  private HttpClientConfiguration httpClient = new HttpClientConfiguration();
@@ -21,6 +24,16 @@ public class SlackpayConfiguration extends Configuration {
 	  @JsonProperty("httpClient")
 	  public HttpClientConfiguration getHttpClientConfiguration() {
 	      return httpClient;
+	  }
+	  
+	  @JsonProperty("slack_token")
+	  public String getSlackToken(){
+		  return slack_token;
+	  }
+	  
+	  @JsonProperty("slack_token")
+	  public void setSlackToken(String token){
+		  slack_token = token;
 	  }
 	  
 	  public String getApplicationName() {

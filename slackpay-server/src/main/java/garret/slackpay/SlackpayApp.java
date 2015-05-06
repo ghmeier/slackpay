@@ -34,7 +34,7 @@ public class SlackpayApp extends Application<SlackpayConfiguration>
     	    cors.addMappingForUrlPatterns(EnumSet.allOf(DispatcherType.class), true, "/*");
     	    
     	env.jersey().register(AliveResource.class);
-    	env.jersey().register(new PayResource(httpClient));
+    	env.jersey().register(new PayResource(httpClient,conf.getSlackToken()));
 		
 	}
 }

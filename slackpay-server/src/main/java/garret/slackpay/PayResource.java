@@ -19,9 +19,11 @@ import org.apache.http.client.HttpClient;
 public class PayResource {
 	
 	private final HttpClient client;
+	private String token;
 	
-	public PayResource(HttpClient client) {
+	public PayResource(HttpClient client,String token) {
 		this.client = client;
+		this.token = token;
 	}
 	
 	@GET
@@ -36,7 +38,7 @@ public class PayResource {
 			return "No username present. Try /slackpay @<username> $<X.XX> <note>";
 		}
 		
-		String recip = SlackItem.getSlackEmail(username,client);
+		String recip = SlackItem.getSlackEmail(username,client,token);
 		if (recip == null){
 			return "Incorrect Username. Try /slackpay @<username> $<X.XX> <note>";
 		}

@@ -1,4 +1,5 @@
 applicationName: slackpay
+slack_token: xoxp-2801095921-2806004971-4743837401-be17e8
 server:
   type: simple
   applicationContextPath: /

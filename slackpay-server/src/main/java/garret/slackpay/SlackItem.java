@@ -17,10 +17,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class SlackItem {
 
-	public static String getSlackEmail (String username,HttpClient client){
+	public static String getSlackEmail (String username,HttpClient client,String token){
 		
 		String email = null;
-		HttpGet get = new HttpGet("https://slack.com/api/users.list?token=xoxp-2801095921-2806004971-4743837401-be17e8");
+		HttpGet get = new HttpGet("https://slack.com/api/users.list?token="+token);
+		System.out.println(token);
 		try {
 			HttpResponse res = client.execute(get);
 
