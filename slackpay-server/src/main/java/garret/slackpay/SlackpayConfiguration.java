@@ -1,5 +1,8 @@
 package garret.slackpay;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
@@ -15,7 +18,7 @@ public class SlackpayConfiguration extends Configuration {
 	  private String applicationName = "slackpay";
 	  
 	  @NotEmpty
-	  private String slack_token;
+	  private Map<String,String> slack_token = new HashMap<String,String>();
 	  
 	  @Valid
 	  @NotNull
@@ -27,13 +30,13 @@ public class SlackpayConfiguration extends Configuration {
 	  }
 	  
 	  @JsonProperty("slack_token")
-	  public String getSlackToken(){
-		  return slack_token;
+	  public String getSlackToken(String team){
+		  return slack_token.get(team);
 	  }
 	  
 	  @JsonProperty("slack_token")
-	  public void setSlackToken(String token){
-		  slack_token = token;
+	  public void setSlackToken(String team,String token){
+		  slack_token.put(team, token);
 	  }
 	  
 	  public String getApplicationName() {
