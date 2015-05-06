@@ -25,7 +25,7 @@ public class PayResource {
 		}
 		
 		String recip = tokens[0];
-		double amt = Double.parseDouble(tokens[1].replaceAll("$", ""));
+		double amt = Double.parseDouble(tokens[1].replaceAll("[$]", ""));
 		String note = "";
 		if (tokens.length >= 3){
 			note = tokens[2];
