@@ -30,6 +30,6 @@ public class VenmoTransaction {
 				"recipients="+this.recipient+"&"+
 				"amount="+this.amount+"&"+
 				"note="+this.note+"&"+
-				"audience="+audience+"|Pay @"+this.slackName+">";
+				"audience="+audience+"|Pay "+this.slackName+">";
 	}
 }

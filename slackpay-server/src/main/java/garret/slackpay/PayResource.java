@@ -56,6 +56,8 @@ public class PayResource {
 		String note = null;
 		if (s.hasNext()){
 			note = s.nextLine();
+		}else{
+			note = "";
 		}
 		
 		VenmoTransaction txn = VenmoTransaction.getPayTransaction(amt, recip, username, note);
