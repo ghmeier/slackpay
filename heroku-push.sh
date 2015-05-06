@@ -1,1 +1,1 @@
-git subtree push --prefix slackpay-server heroku master
+git subtree push --prefix slackpay-server heroku configs
