@@ -27,7 +27,7 @@ public class SlackItem {
 			ObjectMapper mapper = new ObjectMapper();
 			SlackList list = mapper.readValue(res.getEntity().getContent(), SlackList.class);
 			for (SlackUser u:list.getMembers()){
-				if (u.getName().equals(username)){
+				if (u.getName().equals(username.replace("@", ""))){
 					email = u.getProfile().getEmail();
 					break;
 				}
