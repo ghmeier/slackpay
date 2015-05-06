@@ -33,12 +33,12 @@ public class PayResource {
 		if (s.hasNext()){
 			username = s.next();
 		}else{
-			return "invalid";
+			return "No username present. Try /slackpay @<username> $<X.XX> <note>";
 		}
 		
 		String recip = SlackItem.getSlackEmail(username,client);
 		if (recip == null){
-			return "invalid";
+			return "Incorrect Username. Try /slackpay @<username> $<X.XX> <note>";
 		}
 		
 		double amt = 0;
@@ -47,13 +47,16 @@ public class PayResource {
 			if (temp.matches("[$][0-9]*.[0-9][0-9]")){
 			amt = Double.parseDouble(temp.replaceAll("[$]", ""));
 			}else{
-				return "invalid";
+				return "Incorrect amount. Try /slackpay @<username> $<X.XX> <note>";
 			}
 		}else{
-			return "invalid";
+			return "No amount present. Try /slackpay @<username> $<X.XX> <note>";
 		}
 		
-		String note = s.nextLine();
+		String note = null;
+		if (s.hasNext()){
+			note = s.nextLine();
+		}
 		
 		VenmoTransaction txn = VenmoTransaction.getPayTransaction(amt, recip, username, note);
 		return txn.getLink();
