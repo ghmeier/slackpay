@@ -28,17 +28,6 @@ public class SlackInfo {
 	
 	@QueryParam("text")
 	public String text;
-/*	
-	public SlackInfo(String token,String team_id, String team_domain,String channel_id,String channel_name,String user_id,String user_name,String command,String text){
-		this.token = token;
-		this.team_id = team_id;
-		this.team_domain = team_domain;
-		this.channel_id = channel_id;
-		this.user_id = user_id;
-		this.user_name = user_name;
-		this.command = command;
-		this.text = text;
-	}*/
 
 	@JsonProperty
 	public String getToken() {
