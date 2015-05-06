@@ -12,7 +12,6 @@ import javax.ws.rs.core.MediaType;
 
 @Path("pay")
 @Produces(MediaType.APPLICATION_JSON)
-
 public class PayResource {
 	
 	@GET

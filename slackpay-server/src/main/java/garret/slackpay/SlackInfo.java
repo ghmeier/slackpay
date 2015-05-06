@@ -1,32 +1,32 @@
 package garret.slackpay;
 
-import javax.ws.rs.FormParam;
+import javax.ws.rs.QueryParam;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class SlackInfo {
-	@FormParam("token")
+	@QueryParam("token")
 	public String token;
 	
-	@FormParam("team_id")
+	@QueryParam("team_id")
 	public String team_id;
 	
-	@FormParam("team_domain")
+	@QueryParam("team_domain")
 	public String team_domain;
 	
-	@FormParam("channel_id")
+	@QueryParam("channel_id")
 	public String channel_id;
 	
-	@FormParam("user_id")
+	@QueryParam("user_id")
 	public String user_id;
 	
-	@FormParam("user_name")
+	@QueryParam("user_name")
 	public String user_name;
 	
-	@FormParam("command")
+	@QueryParam("command")
 	public String command;
 	
-	@FormParam("text")
+	@QueryParam("text")
 	public String text;
 /*	
 	public SlackInfo(String token,String team_id, String team_domain,String channel_id,String channel_name,String user_id,String user_name,String command,String text){
@@ -38,7 +38,7 @@ public class SlackInfo {
 		this.user_name = user_name;
 		this.command = command;
 		this.text = text;
-	}
+	}*/
 
 	@JsonProperty
 	public String getToken() {
@@ -118,5 +118,5 @@ public class SlackInfo {
 	@JsonProperty
 	public void setText(String text) {
 		this.text = text;
-	}*/
+	}
 }
