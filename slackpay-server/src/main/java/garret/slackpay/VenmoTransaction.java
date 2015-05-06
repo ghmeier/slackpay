@@ -5,20 +5,22 @@ public class VenmoTransaction {
 	public double amount;
 	public String note;
 	public String recipient;
+	public String slackName;
 	public static final String audience = "private";
 	
-	private VenmoTransaction(double amount,String recipient, String note){
+	private VenmoTransaction(double amount,String recipient, String slackName, String note){
 		this.amount = amount;
 		this.recipient = recipient;
 		this.note = note;
+		this.slackName = slackName;
 	}
 	
 	private void setTxn(String type){
 		this.txn = type; 
 	}
 	
-	public static VenmoTransaction getPayTransaction(double amount,String recipient,String note){
-		VenmoTransaction v = new VenmoTransaction(amount, recipient, note);
+	public static VenmoTransaction getPayTransaction(double amount,String recipient,String slackName, String note){
+		VenmoTransaction v = new VenmoTransaction(amount, recipient,slackName, note);
 		v.setTxn("pay");
 		return v;
 	}
@@ -28,6 +30,6 @@ public class VenmoTransaction {
 				"recipients="+this.recipient+"&"+
 				"amount="+this.amount+"&"+
 				"note="+this.note+"&"+
-				"audience="+this.audience+"|Pay User>";
+				"audience="+audience+"|Pay @"+this.slackName+">";
 	}
 }

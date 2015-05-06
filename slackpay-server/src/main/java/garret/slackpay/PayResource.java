@@ -24,14 +24,15 @@ public class PayResource {
 			return "Invalid";
 		}
 		
-		String recip = tokens[0];
+		String username = tokens[0].replace("[@]", "");
+		String recip = SlackItem.getSlackEmail(username);
 		double amt = Double.parseDouble(tokens[1].replaceAll("[$]", ""));
 		String note = "";
 		if (tokens.length >= 3){
 			note = tokens[2];
 		}
 		
-		VenmoTransaction txn = VenmoTransaction.getPayTransaction(amt, recip, note);
+		VenmoTransaction txn = VenmoTransaction.getPayTransaction(amt, recip, username, note);
 		return txn.getLink();
 		
 	}
