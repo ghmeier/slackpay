@@ -30,4 +30,8 @@ Now add a slash command with slack's integration like so:
 
 Push the server to your favorite hosting service (I like heroku) and run it.
 
+## Using the slash command
+`/slackpay @slackbot $1.00 You da best!`
+The link will send a payment to slackbot's email on the slack team.
+
 ###I'm running a version and can add your team to it, as well, just ask :)
