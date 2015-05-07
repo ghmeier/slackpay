@@ -33,5 +33,8 @@ Push the server to your favorite hosting service (I like heroku) and run it.
 ## Using the slash command
 `/slackpay @slackbot $1.00 You da best!`
 The link will send a payment to slackbot's email on the slack team.
+* Username is the slack username
+* Payment amount must be formatted $00.00 The two decimal places are required, but you can have as many leading zeroes as you want
+* The note is any string after the username and dollar amount.
 
 ###I'm running a version and can add your team to it, as well, just ask :)
